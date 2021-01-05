@@ -47,7 +47,7 @@ resource "helm_release" "main" {
   namespace  = kubernetes_namespace.main.metadata.0.name
   repository = "https://charts.jetstack.io"
   chart      = "cert-manager"
-  version    = "0.13"
+  version    = "1.1.0"
 
   dynamic "set" {
     for_each = var.metrics ? local.metrics : {}
